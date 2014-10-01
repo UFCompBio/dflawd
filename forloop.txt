@@ -1,0 +1,8 @@
+for planet in Mercury Venus Earth Mars Jupiter Saturn Uranus Neptune;
+do
+curl en.wikipedia.org/wiki/$planet > $planet.txt;
+if [ -s $planet.txt ];
+then echo "$planet.txt in not empty"
+else rm $planet.txt
+fi;
+done;
